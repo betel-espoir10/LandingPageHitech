@@ -368,7 +368,7 @@ img {
 
 .steps-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -450,6 +450,9 @@ img {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card:hover {
@@ -489,6 +492,13 @@ img {
 .service-content {
     padding: 2rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.service-content .btn {
+    margin-top: auto;
 }
 
 .service-icon-small {
