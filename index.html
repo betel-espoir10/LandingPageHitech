@@ -21,7 +21,8 @@
     <header class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="public/Hitech.jpg" alt="Hitech Academy Logo" class="brand-logo"> Hitech <span>Academy</span>
+                <img src="public/Hitech_Academy.png" alt="Hitech Academy Logo" class="brand-logo"> Hitech
+                <span>Academy</span>
             </a>
             <nav class="nav-menu">
                 <ul class="nav-list">
@@ -37,6 +38,10 @@
             </div>
         </div>
     </header>
+
+    <!-- //******************//
+    //******* Section Hero  *********//
+    //******************// -->
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -75,6 +80,10 @@
             </div>
         </div>
     </section>
+
+    <!-- //******************//
+    //******* Section Comment Xa marche  *********//
+    //******************// -->
 
     <!-- How it Works Section -->
     <section class="how-it-works" id="how-it-works">
@@ -115,6 +124,10 @@
         </div>
     </section>
 
+    <!--  //******************//
+    //******* Section Services *********//
+    //******************// -->
+
     <!-- Services Section -->
     <section class="services bg-light" id="services">
         <div class="container">
@@ -140,7 +153,7 @@
                             <li><i class="fa-solid fa-check"></i> Node.js & Bases de données</li>
                             <li><i class="fa-solid fa-check"></i> Projets réels</li>
                         </ul>
-                        <a href="#contact" class="btn btn-outline btn-full">En savoir plus</a>
+                        <button class="btn btn-outline btn-full open-modal-btn" data-module="dev-web">En savoir plus</button>
                     </div>
                 </div>
 
@@ -159,7 +172,7 @@
                             <li><i class="fa-solid fa-check"></i> Deep Learning</li>
                             <li><i class="fa-solid fa-check"></i> Big Data Analytics</li>
                         </ul>
-                        <a href="#contact" class="btn btn-outline btn-full">En savoir plus</a>
+                        <button class="btn btn-outline btn-full open-modal-btn" data-module="ia-data">En savoir plus</button>
                     </div>
                 </div>
 
@@ -178,12 +191,34 @@
                             <li><i class="fa-solid fa-check"></i> Cryptographie</li>
                             <li><i class="fa-solid fa-check"></i> Administration Réseaux</li>
                         </ul>
-                        <a href="#contact" class="btn btn-outline btn-full">En savoir plus</a>
+                        <button class="btn btn-outline btn-full open-modal-btn" data-module="cyber">En savoir plus</button>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Développement d'applications mobiles">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon-small"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <h3 class="service-title">Développement Mobile</h3>
+                        <p class="service-desc">Créez des applications performantes pour iOS et Android en natif (Java/Kotlin) ou en multiplateforme avec Flutter/Dart.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Java & Kotlin (Natif Android)</li>
+                            <li><i class="fa-solid fa-check"></i> Flutter & Dart (Multiplateforme)</li>
+                            <li><i class="fa-solid fa-check"></i> Déploiement App & Play Store</li>
+                        </ul>
+                        <button class="btn btn-outline btn-full open-modal-btn" data-module="dev-mobile">En savoir plus</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- //******************//
+    //******* Section Temoignages  *********//
+    //******************//  -->
 
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
@@ -201,9 +236,9 @@
                         pour lancer ma propre agence de développement web à N'Djamena. Une expérience transformatrice !"
                     </p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ali Mahamat">
+                        <img src="public/images/esp.png" alt="Betel Espoir">
                         <div>
-                            <h4>Ali Mahamat</h4>
+                            <h4>Betel Espoir</h4>
                             <span>Développeur Full-Stack</span>
                         </div>
                     </div>
@@ -214,9 +249,9 @@
                     <p class="testimonial-text">"La formation en IA est d'un niveau exceptionnel. Les formateurs sont
                         des passionnés et les projets pratiques m'ont directement préparée au monde professionnel."</p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Fatima Zara">
+                        <img src="public/images/file_esp.png" alt="Fatima Zara">
                         <div>
-                            <h4>Fatima Zara</h4>
+                            <h4>Gonbeloum Espoir</h4>
                             <span>Data Scientist Junior</span>
                         </div>
                     </div>
@@ -227,9 +262,9 @@
                     <p class="testimonial-text">"Je cherchais à me reconvertir dans la cybersécurité. L'approche
                         pratique et le matériel mis à disposition par l'académie sont juste remarquables."</p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Ibrahim Oumar">
+                        <img src="public/images/retouch_2.png" alt="Gonbeloum Le Raskol">
                         <div>
-                            <h4>Ibrahim Oumar</h4>
+                            <h4>Raskol LeGonbeloum</h4>
                             <span>Analyste Cybersécurité</span>
                         </div>
                     </div>
@@ -240,16 +275,20 @@
                     <p class="testimonial-text">"En tant que partenaire, nous recrutons régulièrement les talents formés
                         chez Hitech Academy. Ils sont opérationnels, innovants et très motivés."</p>
                     <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Moussa Youssouf">
+                        <img src="public/images/den.jpg" alt="Denan Leonard">
                         <div>
-                            <h4>Moussa Youssouf</h4>
-                            <span>Directeur IT, Partenaire</span>
+                            <h4>Denan Léonard</h4>
+                            <span>Directeur de Pharmacie, Partenaire</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- //******************//
+    //******* Section Contacts et Footer  *********//
+    //******************// -->
 
     <!-- Footer & Contact Section -->
     <footer class="footer" id="contact">
@@ -266,9 +305,9 @@
                     <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=61560351140296">
                             <i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
 
@@ -289,7 +328,12 @@
                         </li>
                         <li>
                             <i class="fa-solid fa-envelope"></i>
-                            <a href="mailto:contact@hitech-academy.td">contact@hitech-academy.td</a>
+                            <a href="mailto:contact@hitech-academy.td">contacthitechbusiness@gmail.com</a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/23598220034" target="_blank" class="btn whatsapp-btn">
+                                <i class="fa-brands fa-whatsapp"></i> Discuter sur WhatsApp
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -322,6 +366,63 @@
             </div>
         </div>
     </footer>
+
+    <!-- Service Details Modal -->
+    <div class="modal-overlay" id="serviceModal">
+        <div class="modal-box">
+            <button class="modal-close" id="closeModal" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon"></div>
+                <h3 class="modal-title" id="modalTitle">Titre</h3>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic Content -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-full modal-cta-btn">S'inscrire à ce programme</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div class="modal-overlay" id="registrationModal">
+        <div class="modal-box">
+            <button class="modal-close" id="closeRegModal" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-user-plus"></i></div>
+                <h3 class="modal-title">Inscription au programme</h3>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form" id="registrationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Votre prénom" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Votre numéro de téléphone" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="confirmInscription" required>
+                        <label for="confirmInscription">Je m'inscris à cette offre de formation.</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Valider mon inscription</button>
+                    
+                    <div class="divider">OU</div>
+
+                    <a href="https://wa.me/23598220034" target="_blank" class="btn whatsapp-btn" style="margin-top: 0;">
+                        <i class="fa-brands fa-whatsapp"></i> Discuter sur WhatsApp
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- JS -->
     <script src="script.js"></script>
