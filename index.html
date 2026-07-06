@@ -248,60 +248,66 @@
                 <p class="section-subtitle">Découvrez les retours de nos étudiants et partenaires sur la qualité de nos
                     formations.</p>
             </div>
-            <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
-                    <p class="testimonial-text">"Grâce à Hitech Academy, j'ai pu acquérir les compétences nécessaires
-                        pour lancer ma propre agence de développement web à N'Djamena. Une expérience transformatrice !"
-                    </p>
-                    <div class="testimonial-author">
-                        <img src="public/images/esp.png" alt="Betel Espoir">
-                        <div>
-                            <h4>Betel Espoir</h4>
-                            <span>Développeur Full-Stack</span>
+            <div class="testimonials-carousel-wrapper">
+                <button class="carousel-btn prev-btn" id="prevTestimonial" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="testimonials-carousel">
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                            <p class="testimonial-text">"Grâce à Hitech Academy, j'ai pu acquérir les compétences nécessaires
+                                pour lancer ma propre agence de développement web à N'Djamena. Une expérience transformatrice !"
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="public/images/esp.png" alt="Betel Espoir">
+                                <div>
+                                    <h4>Betel Espoir</h4>
+                                    <span>Développeur Full-Stack</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                            <p class="testimonial-text">"La formation en IA est d'un niveau exceptionnel. Les formateurs sont
+                                des passionnés et les projets pratiques m'ont directement préparée au monde professionnel."</p>
+                            <div class="testimonial-author">
+                                <img src="public/images/file_esp.png" alt="Fatima Zara">
+                                <div>
+                                    <h4>Gonbeloum Espoir</h4>
+                                    <span>Data Scientist Junior</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                            <p class="testimonial-text">"Je cherchais à me reconvertir dans la cybersécurité. L'approche
+                                pratique et le matériel mis à disposition par l'académie sont juste remarquables."</p>
+                            <div class="testimonial-author">
+                                <img src="public/images/retouch_2.png" alt="Gonbeloum Le Raskol">
+                                <div>
+                                    <h4>Raskol LeGonbeloum</h4>
+                                    <span>Analyste Cybersécurité</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                            <p class="testimonial-text">"En tant que partenaire, nous recrutons régulièrement les talents formés
+                                chez Hitech Academy. Ils sont opérationnels, innovants et très motivés."</p>
+                            <div class="testimonial-author">
+                                <img src="public/images/den.jpg" alt="Denan Leonard">
+                                <div>
+                                    <h4>Denan Léonard</h4>
+                                    <span>Directeur de Pharmacie, Partenaire</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
-                    <p class="testimonial-text">"La formation en IA est d'un niveau exceptionnel. Les formateurs sont
-                        des passionnés et les projets pratiques m'ont directement préparée au monde professionnel."</p>
-                    <div class="testimonial-author">
-                        <img src="public/images/file_esp.png" alt="Fatima Zara">
-                        <div>
-                            <h4>Gonbeloum Espoir</h4>
-                            <span>Data Scientist Junior</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
-                    <p class="testimonial-text">"Je cherchais à me reconvertir dans la cybersécurité. L'approche
-                        pratique et le matériel mis à disposition par l'académie sont juste remarquables."</p>
-                    <div class="testimonial-author">
-                        <img src="public/images/retouch_2.png" alt="Gonbeloum Le Raskol">
-                        <div>
-                            <h4>Raskol LeGonbeloum</h4>
-                            <span>Analyste Cybersécurité</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 4 -->
-                <div class="testimonial-card">
-                    <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
-                    <p class="testimonial-text">"En tant que partenaire, nous recrutons régulièrement les talents formés
-                        chez Hitech Academy. Ils sont opérationnels, innovants et très motivés."</p>
-                    <div class="testimonial-author">
-                        <img src="public/images/den.jpg" alt="Denan Leonard">
-                        <div>
-                            <h4>Denan Léonard</h4>
-                            <span>Directeur de Pharmacie, Partenaire</span>
-                        </div>
-                    </div>
-                </div>
+                <button class="carousel-btn next-btn" id="nextTestimonial" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -380,8 +386,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Hitech Academy. Tous droits réservés.</p>
                 <div class="footer-bottom-links">
-                    <a href="#">Politique de confidentialité</a>
-                    <a href="#">Conditions d'utilisation</a>
+                    <a href="#" class="open-legal-btn" data-legal="privacy">Politique de confidentialité</a>
+                    <a href="#" class="open-legal-btn" data-legal="terms">Conditions d'utilisation</a>
                 </div>
             </div>
         </div>
@@ -441,6 +447,20 @@
                         <i class="fa-brands fa-whatsapp"></i> Discuter sur WhatsApp
                     </a>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legal Modal -->
+    <div class="modal-overlay" id="legalModal">
+        <div class="modal-box">
+            <button class="modal-close" id="closeLegalModal" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <h3 class="modal-title" id="legalTitle">Titre</h3>
+            </div>
+            <div class="modal-body" id="legalBody">
+                <!-- Dynamic Content -->
             </div>
         </div>
     </div>

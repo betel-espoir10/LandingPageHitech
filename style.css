@@ -554,21 +554,61 @@ img {
     padding: 6rem 0;
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+.testimonials-carousel-wrapper {
+    position: relative;
+    padding: 0 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.testimonials-carousel {
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonials-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
 .testimonial-card {
+    flex: 0 0 100%;
     background: white;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
     position: relative;
     transition: var(--transition);
 }
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
 
 .testimonial-card:hover {
     box-shadow: var(--shadow-md);
@@ -1021,6 +1061,25 @@ img {
 
 .divider::after {
     margin-left: 1rem;
+}
+
+/* Legal Text Styles */
+.legal-text {
+    padding-bottom: 1rem;
+}
+
+.legal-text p {
+    color: var(--text-main);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.legal-text h4 {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
 /* =========================================

@@ -304,4 +304,126 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    // 7. Legal Modal Logic
+    const legalData = {
+        'privacy': {
+            title: 'Politique de Confidentialité',
+            content: `
+                <div class="legal-text">
+                    <p><strong>Dernière mise à jour : 07 Juillet 2026</strong></p>
+                    <h4>1. Collecte des données</h4>
+                    <p>Nous collectons les informations que vous nous fournissez directement, par exemple lorsque vous remplissez un formulaire de contact ou d'inscription. Ces informations peuvent inclure votre nom, adresse e-mail, numéro de téléphone, etc.</p>
+                    <h4>2. Utilisation des données</h4>
+                    <p>Les informations que nous collectons sont utilisées pour vous fournir nos services, communiquer avec vous, améliorer notre site web et nos offres de formation, et respecter nos obligations légales.</p>
+                    <h4>3. Protection des données</h4>
+                    <p>Nous mettons en œuvre diverses mesures de sécurité pour préserver la sécurité de vos informations personnelles. Vos données ne seront ni vendues, ni échangées, ni transférées à des tiers sans votre consentement.</p>
+                    <h4>4. Vos droits</h4>
+                    <p>Vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles. Pour exercer ces droits, veuillez nous contacter via les coordonnées fournies sur notre site.</p>
+                </div>
+            `
+        },
+        'terms': {
+            title: "Conditions d'Utilisation",
+            content: `
+                <div class="legal-text">
+                    <p><strong>Dernière mise à jour : 07 Juillet 2026</strong></p>
+                    <h4>1. Acceptation des conditions</h4>
+                    <p>En accédant et en utilisant ce site web, vous acceptez d'être lié par ces conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser notre site.</p>
+                    <h4>2. Propriété intellectuelle</h4>
+                    <p>Tout le contenu présent sur ce site (textes, images, logos, vidéos) est la propriété exclusive de Hitech Academy ou de ses partenaires et est protégé par les lois sur la propriété intellectuelle.</p>
+                    <h4>3. Utilisation du site</h4>
+                    <p>Vous vous engagez à n'utiliser ce site qu'à des fins légales et d'une manière qui ne porte pas atteinte aux droits d'autrui ou ne restreint pas leur utilisation du site.</p>
+                    <h4>4. Limitation de responsabilité</h4>
+                    <p>Hitech Academy ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation ou de l'impossibilité d'utiliser ce site web ou nos services de formation.</p>
+                </div>
+            `
+        }
+    };
+
+    const legalModalOverlay = document.getElementById('legalModal');
+    if (legalModalOverlay) {
+        const closeLegalBtn = document.getElementById('closeLegalModal');
+        const legalTitle = document.getElementById('legalTitle');
+        const legalBody = document.getElementById('legalBody');
+        const openLegalBtns = document.querySelectorAll('.open-legal-btn');
+
+        const closeLegalModal = () => {
+            legalModalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        openLegalBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const legalType = btn.getAttribute('data-legal');
+                const data = legalData[legalType];
+
+                if (data) {
+                    legalTitle.textContent = data.title;
+                    legalBody.innerHTML = data.content;
+                    
+                    legalModalOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        closeLegalBtn.addEventListener('click', closeLegalModal);
+
+        legalModalOverlay.addEventListener('click', (e) => {
+            if (e.target === legalModalOverlay) {
+                closeLegalModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && legalModalOverlay.classList.contains('active')) {
+                closeLegalModal();
+            }
+        });
+    }
+
+    // 8. Testimonials Carousel Logic
+    const track = document.getElementById('testimonialsTrack');
+    const prevBtn = document.getElementById('prevTestimonial');
+    const nextBtn = document.getElementById('nextTestimonial');
+    
+    if (track && prevBtn && nextBtn) {
+        const cards = Array.from(track.children);
+        let currentIndex = 0;
+
+        const updateCarousel = () => {
+            const cardWidth = cards[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            
+            // Disable buttons at edges
+            prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+            prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+            
+            nextBtn.style.opacity = currentIndex === cards.length - 1 ? '0.5' : '1';
+            nextBtn.style.pointerEvents = currentIndex === cards.length - 1 ? 'none' : 'auto';
+        };
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < cards.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        // Initialize and handle resize
+        updateCarousel();
+        window.addEventListener('resize', () => {
+            currentIndex = 0;
+            updateCarousel();
+        });
+    }
 });
