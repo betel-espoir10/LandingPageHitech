@@ -130,9 +130,9 @@
                         <p class="step-desc">Explorez en détail l'ensemble de nos programmes, compétences et modalités
                             dans notre catalogue complet.</p>
                     </div>
-                    <a href="public/Catalogue.pdf" download class="btn btn-outline btn-full" target="_blank"
+                    <a href="public/Catalogue.pdf" class="btn btn-outline btn-full" target="_blank"
                         style="margin-top: 1.5rem;">
-                        Télécharger le PDF <i class="fa-solid fa-download"></i>
+                        Consulter le catalogue <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
             </div>
@@ -421,19 +421,20 @@
             </div>
             <div class="modal-body">
                 <form class="modal-form" id="registrationForm">
+                    <input type="hidden" name="programme" id="programmeInput">
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="text" placeholder="Votre nom" required>
+                            <input type="text" name="nom" placeholder="Votre nom" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Votre prénom" required>
+                            <input type="text" name="prenom" placeholder="Votre prénom" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Votre email" required>
+                        <input type="email" name="email" placeholder="Votre email" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" placeholder="Votre numéro de téléphone" required>
+                        <input type="tel" name="telephone" placeholder="Votre numéro de téléphone" required>
                     </div>
                     <div class="checkbox-group">
                         <input type="checkbox" id="confirmInscription" required>

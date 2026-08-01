@@ -240,6 +240,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Open Registration Modal
             const regModal = document.getElementById('registrationModal');
             if (regModal) {
+                // Set the hidden program input value
+                const progInput = document.getElementById('programmeInput');
+                const modalTitleEl = document.getElementById('modalTitle');
+                if (progInput && modalTitleEl) {
+                    progInput.value = modalTitleEl.textContent;
+                }
                 regModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
@@ -287,20 +293,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.innerHTML = 'Validation... <i class="fa-solid fa-spinner fa-spin"></i>';
                 btn.disabled = true;
 
-                setTimeout(() => {
-                    btn.innerHTML = 'Inscription validée ! <i class="fa-solid fa-check"></i>';
-                    btn.style.backgroundColor = '#10b981';
-                    btn.style.borderColor = '#10b981';
-                    btn.style.color = 'white';
-                    regForm.reset();
+                const formData = new FormData(regForm);
+                // Remplacez l'URL ci-dessous par l'URL de votre application web Google Apps Script
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxr532ELyoStwfkIoXcHq_0KK_kinX6gavmhQxrenRIo_K8MXNoKCoCxkj_e-kLoh1R/exec';
 
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.style = '';
-                        btn.disabled = false;
-                        closeRegModal();
-                    }, 2500);
-                }, 1500);
+                fetch(scriptURL, { method: 'POST', body: formData })
+                    .then(response => {
+                        btn.innerHTML = 'Inscription validée ! <i class="fa-solid fa-check"></i>';
+                        btn.style.backgroundColor = '#10b981';
+                        btn.style.borderColor = '#10b981';
+                        btn.style.color = 'white';
+                        regForm.reset();
+
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.style = '';
+                            btn.disabled = false;
+                            closeRegModal();
+                        }, 2500);
+                    })
+                    .catch(error => {
+                        console.error('Erreur !', error.message);
+                        btn.innerHTML = 'Erreur de connexion <i class="fa-solid fa-xmark"></i>';
+                        btn.style.backgroundColor = '#ef4444';
+                        btn.style.borderColor = '#ef4444';
+                        btn.style.color = 'white';
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.style = '';
+                            btn.disabled = false;
+                        }, 2500);
+                    });
             });
         }
     }
